@@ -1,12 +1,12 @@
 body {
     border: 5px solid rgb(0, 0, 0);
-    background-color: rgb(255, 224, 48);
+    background-color: rgb(255, 247, 132);
     color: rgb(0, 0, 0);
     font-family: 'Courier New';
     font-size: 1.05rem;
   }
 a {
-  font-size: 1rem;
+  font-size: 1.4rem;
   color: rgb(0, 0, 0);
 }
 
@@ -34,10 +34,13 @@ br {
     justify-content: center;
     align-items: center;
   }
-
-  nav>h5:hover {
+  p:hover, div:hover, h1:hover, h2:hover{
+    transform: scale(1.025);
+    transition-duration: 100ms;
+  }
+  h5:hover{
     transform: scale(1.1);
-    transition-duration: 5000ms;
+    transition-duration: 100ms;
   }
   h2, h4, p{
     padding-right: 10%;
