@@ -1,0 +1,29 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+  }
+  header {
+    background-color: purple;
+    padding: 20px;
+    text-align: center;
+  }
+  nav {
+    background-color: red;
+    text-align: center;
+    padding: 10px;
+  }
+  nav a {
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+  }
+  section {
+    padding: 20px;
+  }
+  footer {
+    background-color: purple;
+    padding: 10px;
+    text-align: center;
+    color: white;
+  }
