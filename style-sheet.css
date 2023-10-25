@@ -10,14 +10,18 @@ body {
     margin-top: 10px;
     margin-bottom: 10px;
     text-align: center;
+  }
+  
+  nav{
+    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  
+
   nav>h5:hover {
     transform: scale(1.1);
-    transition-duration: 1000ms;
+    transition-duration: 5000ms;
   }
 
   h1 {
@@ -47,12 +51,21 @@ h2, h5 {
     margin-top: 10px;
     margin-bottom: 10px;
   }
-
-  h5 {
-    margin-left: 50%;
+  
+  h4{
+    padding-left: 2.5%;
   }
 
-  p {
+  h5 {
+    margin-left: 20px;
+  }
+
+  p{
+    padding-left: 2.5%;
+    line-height: 1.6;
+  }
+
+  ul {
     padding-left: 5%;
     line-height: 1.6;
   }
