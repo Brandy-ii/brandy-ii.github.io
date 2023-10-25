@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(255, 250, 243);
+    background-color: rgb(255, 169, 88);
     color: rgb(0, 0, 0);
     font-family: 'Courier New';
   }
@@ -46,7 +46,6 @@ body {
     outline-width: 2px;
     outline-color: black;
     padding: 10px;
-    padding-right: 100px;
     box-shadow: 10px 10px;
   }
   
@@ -72,6 +71,7 @@ body {
 
   ul {
     padding-left: 5%;
+    padding-right: 20%;
     line-height: 1.6;
   }
 
