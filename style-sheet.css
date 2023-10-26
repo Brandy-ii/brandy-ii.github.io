@@ -128,7 +128,8 @@ br {
  }
 
  #flamboyant{
-    background-image: linear-gradient(to right, rgb(255, 0, 0),rgb(255, 166, 0),rgb(255, 255, 0),rgb(0, 128, 0),rgb(0, 0, 255),rgb(76, 0, 130),rgb(238, 130, 238));
+  background-color: #ff6600;  
+  /* background-image: linear-gradient(to right, rgb(255, 0, 0),rgb(255, 166, 0),rgb(255, 255, 0),rgb(0, 128, 0),rgb(0, 0, 255),rgb(76, 0, 130),rgb(238, 130, 238)); */
     color: rgb(255, 255, 255);
     font-size: 1.5rem;
     font-weight: bold;
