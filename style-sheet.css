@@ -136,7 +136,7 @@ br {
     outline-width: 2px;
     outline-color: black;
     text-shadow: 2px 2px rgb(0, 0, 0);
-    margin-right: 2%;
+    margin-right: 5%;
     padding: 10px;
     text-align: center;
     box-shadow: 10px 10px black;
@@ -202,7 +202,7 @@ br {
 }
 
 #leftnav>a>h5{
-  margin-right: 10%;
+  margin-right: 5%;
 }
 
 .image-container {
