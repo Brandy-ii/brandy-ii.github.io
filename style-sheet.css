@@ -141,6 +141,7 @@ br {
     text-align: center;
     box-shadow: 10px 10px black;
     -webkit-text-stroke: 1px black;
+    margin-right: 10%;
  }
 
  #flamboyant:hover{
@@ -202,7 +203,7 @@ br {
 }
 
 #leftnav>a>h5{
-  margin-right: 5%;
+  margin-right: 10%;
 }
 
 .image-container {
