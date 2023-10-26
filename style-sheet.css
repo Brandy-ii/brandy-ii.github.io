@@ -1,5 +1,4 @@
 body {
-    border: 5px solid rgb(0, 0, 0);
     background-color: rgb(255, 240, 173);
     color: rgb(0, 0, 0);
     font-family: 'Courier New';
@@ -52,7 +51,7 @@ br {
   }
 
   /*shadowbox thing left*/
-  h1, h2, h5, button{
+  h1, h2, h5, button, #pfp{
     background-color: white;
     outline-style: dotted;
     outline-width: 2px;
@@ -163,7 +162,56 @@ br {
   font-size: 16px;
  }
 
-#monthInput::placeholder {
+#input::placeholder {
   color: #888;
   font-style: italic;
+}
+
+#togglenav {
+  position: fixed;
+  left: 20px;
+  top: 20px;
+  z-index: 2;
+}
+
+#leftnav {
+  position: fixed;
+  left: -300px;
+  top: 0;
+  width: 300px;
+  height: 100%;
+  background-color: #ffd036;
+  overflow: auto;
+  transition: all 0.3s ease;
+  z-index: 1;
+  padding-top: 100px;
+}
+
+#leftnav.open {
+  left: 0;
+}
+
+#main-content {
+  transition: all 0.3s ease;
+  position: relative;
+  border: 5px solid #000000;
+}
+
+#main-content.pushed {
+  margin-left: 300px;
+}
+
+#leftnav>h5{
+  margin-right: 5%;
+}
+
+.image-container {
+  text-align: center;
+}
+
+#pfp {
+  margin: auto;
+  display: block;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 50%;
 }
