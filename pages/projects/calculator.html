@@ -32,16 +32,17 @@
             <option value="multiply">Multiply</option>
             <option value="divide">Divide</option>
         </select>
-        <button onclick="piggyBanker()">Calculate</button>
-        <h2>Result: <span id="result"></span></h2>
+        <button onclick="getInput()">Calculate</button>
+        <p id="output"></p>
     </section>
 
+    <section>
     <script>
-        function piggyBanker() {
+        function getInput() {
             const num1 = document.getElementById("num1");
             const num2 = document.getElementById("num2");
             const operator = document.getElementById("operator");
-            const result = document.getElementById("result");
+            const result = document.getElementById("output");
 
             const oneNum = parseFloat(num1.value);
             const twoNum = parseFloat(num2.value);
@@ -73,6 +74,17 @@
 
             result.innerText = results.toString();
         }
+        document.getElementById('num1').addEventListener('keydown', function(event) {
+            if (event.keyCode === 13) {
+              getInput();
+            }
+        });
+
+        document.getElementById('num2').addEventListener('keydown', function(event) {
+            if (event.keyCode === 13) {
+              getInput();
+            }
+        });
     </script>
 </section>
 
