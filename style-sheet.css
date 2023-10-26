@@ -56,11 +56,6 @@ br {
     box-shadow: 10px 10px;
   }
 
-  h3 {
-    text-decoration: underline 2px;
-    margin-left: 2%;
-  }
-
   h4{
     padding-left: 2.5%;
   }
@@ -83,6 +78,8 @@ br {
 
   div {
     outline-style: solid;
+    padding-left: 2.5%;
+    line-height: 1.6;
     background-color: rgba(255, 255, 255, 0.8);
   }
 
@@ -127,5 +124,17 @@ br {
  }
 
  #flamboyant{
-  
+    background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-shadow: 3px 3px black;
+    margin-left: 70%;
+    margin-right: 2%;
+    box-shadow: 10px 10px black;
+ }
+
+ #flamboyant:hover{
+  transform: scale(1.1);
+  transition-duration: 100ms;
  }
