@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Brandy's-Count-Down</title>
+    <link rel="icon" href="/media/pfp.jpg">
+    <link href="/style-sheet.css" rel="stylesheet">
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <header id="header">
+    <h1>Brandy's-Count-Down</h1>
+    <nav>
+        <h5><a href="/index.html">Back to Main Page</a></h5>
+        <h5><a href="/pages/page-hub.html">Back to My Projects</a></h5>
+    </nav>
+    </header>
+    <section id="solid-boxed">
+        <h2>Code description:</h2>
+    <p>
+      This script allows a user to enter a month's number and then it will count down down to zero with the current time to track it.
+    </p>
+    </section>
+
+    <section id="code">
+
+      <input type="number" id="input" placeholder="Enter a number to count down from....">
+      <button onclick="getInput()">Start Count Down!</button>
+      <p id="output"></p>
+
+      <script>
+        function getInput() {
+            const userInput = parseInt(document.getElementById('input').value);
+            if (userInput) {
+                startCountdown(userInput);
+            }
+        }
+
+        function startCountdown(counter) {
+            function displayTimeLoop() {
+                displayCurrentTime(counter);
+                counter--;
+
+                if (counter >= 0) {
+                    setTimeout(displayTimeLoop, 1000);
+                }
+            }
+            displayTimeLoop();
+        }
+
+        function displayCurrentTime(counter) {
+            let currentTime = new Date();
+            let hours = currentTime.getHours();
+            let minutes = currentTime.getMinutes();
+            let seconds = currentTime.getSeconds();
+            let formattedTime = `${hours}:${minutes}:${seconds}   ${counter}`;
+            
+            document.getElementById('output').innerText = formattedTime;
+        }
+
+        document.getElementById('input').addEventListener('keydown', function(event) {
+            if (event.keyCode === 13) {
+                getInput();
+            }
+        });
+    </script>
+</section>
+
+      <section id="padding"></section>
+      <footer>
+        Copyright &copy; 2023 Brandy Bordeaux
+      </footer>
+</body>

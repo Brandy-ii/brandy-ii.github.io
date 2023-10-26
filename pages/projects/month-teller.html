@@ -26,11 +26,11 @@
     <section id="code">
 
       <input type="text" id="input" placeholder="Enter a month's you would like to know the season of....">
-      <button onclick="getMonthFromInput()">Find out the season!</button>
+      <button onclick="getInput()">Find out the season!</button>
       <p id="output"></p>
 
     <script>
-          function getMonthFromInput() {
+          function getInput() {
             const userInput = document.getElementById('input').value;
             if (userInput) {
               const result = whichSeason(userInput);
@@ -63,7 +63,7 @@
 
           document.getElementById('input').addEventListener('keydown', function(event) {
             if (event.keyCode === 13) {
-              getMonthFromInput();
+              getInput();
             }
           });
         </script>
