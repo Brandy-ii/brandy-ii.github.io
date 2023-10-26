@@ -16,7 +16,7 @@
         <h5><a href="/pages/page-hub.html">Back to My Projects</a></h5>
     </nav>
     </header>
-    <section id="code-info">
+    <section id="solid-boxed">
         <h2>Code description:</h2>
     <p>
         This code allows a user to insert the name of a month and it will return the month that it belongs to.
@@ -24,42 +24,43 @@
     </section>
 
     <section id="code">
-    <button onclick="promptForMonth()">Learn a Month's Season!</button>
-    
-    <p id="output"></p>
+
+      <input type="text" id="input" placeholder="Enter a month's you would like to know the season of....">
+      <button onclick="getMonthFromInput()">Find out the season!</button>
+      <p id="output"></p>
 
     <script>
-        function whichSeason(month) {
-          switch (month.toLowerCase()) {
-            case 'march':
-            case 'april':
-            case 'may':
-              return month + ' is in spring';
-            case 'june':
-            case 'july':
-            case 'august':
-              return month + ' is in summer';
-            case 'september':
-            case 'october':
-            case 'november':
-              return month + ' is in fall';
-            case 'december':
-            case 'january':
-            case 'february': 
-              return month + ' is in winter';
-            default:
-              return 'Input was invaild, try again';
+          function getMonthFromInput() {
+            const userInput = document.getElementById('input').value;
+            if (userInput) {
+              const result = whichSeason(userInput);
+              document.getElementById('output').innerText = result;
+            }
           }
-        }
-  
-        function promptForMonth() {
-        const userInput = prompt("Please enter a month's full name:");
-        if (userInput) {
-          const result = whichSeason(userInput);
-          document.getElementById('output').innerText = result;
-        }
-      }
-      </script>
+
+          function whichSeason(month) {
+            switch (month.toLowerCase()) {
+              case 'march':
+              case 'april':
+              case 'may':
+                return month + ' is in spring';
+              case 'june':
+              case 'july':
+              case 'august':
+                return month + ' is in summer';
+              case 'september':
+              case 'october':
+              case 'november':
+                return month + ' is in fall';
+              case 'december':
+              case 'january':
+              case 'february': 
+                return month + ' is in winter';
+              default:
+                return 'Input was invalid, try again';
+            }
+          }
+        </script>
       </section>
 
       <section id="padding"></section>
