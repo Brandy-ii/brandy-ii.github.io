@@ -3,13 +3,63 @@
 
 <head>
     <title>Brandy's Portfolio - Month Teller</title>
-    <link rel="icon" href="media/pfp.jpg">
+    <link rel="icon" href="/media/pfp.jpg">
     <link href="/style-sheet.css" rel="stylesheet">
     <meta charset="UTF-8">
 </head>
 
 <body>
-    <header>
-    Month Teller
+    <header id="">
+    <h1>Brandy's Month Teller</h1>
     </header>
+    <section id="code-info">
+        <h2>Code description:</h2>
+    <p>
+        This code allows a user to insert the name of a month and it will return the month that it belongs to.
+    </p>
+    </section>
+
+    <section id="code">
+    <button onclick="promptForMonth()">Learn a Month's Season!</button>
+    
+    <p id="output"></p>
+
+    <script>
+        function whichSeason(month) {
+          switch (month.toLowerCase()) {
+            case 'march':
+            case 'april':
+            case 'may':
+              return month + ' is in spring';
+            case 'june':
+            case 'july':
+            case 'august':
+              return month + ' is in summer';
+            case 'september':
+            case 'october':
+            case 'november':
+              return month + ' is in fall';
+            case 'december':
+            case 'january':
+            case 'february': 
+              return month + ' is in winter';
+            default:
+              return 'Input was invaild, try again';
+          }
+        }
+  
+        function promptForMonth() {
+        const userInput = prompt("Please enter a month's full name:");
+        if (userInput) {
+          const result = whichSeason(userInput);
+          document.getElementById('output').innerText = result;
+        }
+      }
+      </script>
+      </section>
+
+      <section id="padding"></section>
+      <footer>
+        Copyright &copy; 2023 Brandy Bordeaux
+      </footer>
 </body>
