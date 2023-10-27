@@ -26,7 +26,7 @@
     <section>
         <h1>Upload File</h1>
 
-        <section><p id="solid-boxed"><input type="file" id="fileInput" accept=".webp" /></p></section>
+        <section><p id="solid-boxed"><input type="file" id="fileInput" accept=".APNG, .AVIF, .GIF, .JPG, .SVG, .WEBP" /></p></section>
         <button id="convertButton">Convert to PNG</button>
         <p id="output"><a id="downloadLink" style="display:none"></a><p>
     </section>
@@ -41,7 +41,7 @@
             convertButton.addEventListener('click', function () {
                 const file = fileInput.files[0];
                 if (!file) {
-                    alert("Please select a WebP file.");
+                    alert("Please select an Image file.");
                     return;
                 }
 
@@ -62,6 +62,10 @@
                         ctx.drawImage(img, 0, 0);
 
                         const pngDataUrl = canvas.toDataURL('image/png');
+                        const existingImg = document.getElementById('convertedImg');
+                        if (existingImg) {
+                            existingImg.remove();
+                        }
 
                         downloadLink.href = pngDataUrl;
                         downloadLink.download = outputFileName;
@@ -71,6 +75,7 @@
                         const displayImg = new Image();
                         displayImg.src = pngDataUrl;
                         displayImg.alt = "Converted PNG";
+                        displayImg.id = 'convertedImg';
                         downloadLink.insertAdjacentElement('afterend', displayImg);
                     };
                 };
