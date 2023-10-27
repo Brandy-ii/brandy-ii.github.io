@@ -26,14 +26,14 @@
     <section>
         <h1>Upload File</h1>
 
-        <input type="file" id="fileInput" accept=".webp" />
+        <section><p id="solid-boxed"><input type="file" id="fileInput" accept=".webp" /></p></section>
         <button id="convertButton">Convert to PNG</button>
-        <a id="downloadLink" style="display:none">Download PNG</a>
+        <p id="output"><a id="downloadLink" style="display:none"></a><p>
     </section>
 
     <section>
         <script>
-document.addEventListener('DOMContentLoaded', function () {
+            document.addEventListener('DOMContentLoaded', function () {
             const fileInput = document.getElementById('fileInput');
             const convertButton = document.getElementById('convertButton');
             const downloadLink = document.getElementById('downloadLink');
@@ -65,7 +65,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
                         downloadLink.href = pngDataUrl;
                         downloadLink.download = outputFileName;
+                        downloadLink.textContent = 'Download ' + outputFileName;
                         downloadLink.style.display = 'block';
+
+                        const displayImg = new Image();
+                        displayImg.src = pngDataUrl;
+                        displayImg.alt = "Converted PNG";
+                        downloadLink.insertAdjacentElement('afterend', displayImg);
                     };
                 };
 
