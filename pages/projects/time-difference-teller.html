@@ -24,65 +24,17 @@
     </section>
 
     <section>
-        <h1>Upload File</h1>
-
-        <section><p id="solid-boxed"><input type="file" id="fileInput" accept=".APNG, .AVIF, .GIF, .JPG, .SVG, .WEBP" /></p></section>
-        <button id="convertButton">Convert to PNG</button>
-        <p id="output"><a id="downloadLink" style="display:none"></a><p>
+        <input type="text" id="time1" placeholder="Enter first time">
+        <input type="text" id="time2" placeholder="Enter second time">
+        <button onclick="calculateTimeDifference()">Calculate</button>
+        <p id="result"></p>
     </section>
 
     <section>
         <script>
-            document.addEventListener('DOMContentLoaded', function () {
-            const fileInput = document.getElementById('fileInput');
-            const convertButton = document.getElementById('convertButton');
-            const downloadLink = document.getElementById('downloadLink');
+            function calculateTimeDifference() {
 
-            convertButton.addEventListener('click', function () {
-                const file = fileInput.files[0];
-                if (!file) {
-                    alert("Please select an Image file.");
-                    return;
-                }
-
-            const originalFileName = file.name;
-            const lastDotIndex = originalFileName.lastIndexOf('.');
-            const outputFileName = (lastDotIndex === -1 ? originalFileName : originalFileName.slice(0, lastDotIndex)) + '.png';
-
-                const reader = new FileReader();
-                reader.onload = function (event) {
-                    const img = new Image();
-                    img.src = event.target.result;
-
-                    img.onload = function () {
-                        const canvas = document.createElement('canvas');
-                        const ctx = canvas.getContext('2d');
-                        canvas.width = img.width;
-                        canvas.height = img.height;
-                        ctx.drawImage(img, 0, 0);
-
-                        const pngDataUrl = canvas.toDataURL('image/png');
-                        const existingImg = document.getElementById('convertedImg');
-                        if (existingImg) {
-                            existingImg.remove();
-                        }
-
-                        downloadLink.href = pngDataUrl;
-                        downloadLink.download = outputFileName;
-                        downloadLink.textContent = 'Download ' + outputFileName;
-                        downloadLink.style.display = 'block';
-
-                        const displayImg = new Image();
-                        displayImg.src = pngDataUrl;
-                        displayImg.alt = "Converted PNG";
-                        displayImg.id = 'convertedImg';
-                        downloadLink.insertAdjacentElement('afterend', displayImg);
-                    };
-                };
-
-                reader.readAsDataURL(file);
-            });
-        });
+            }
         </script>
     </section>
 
