@@ -25,8 +25,8 @@
 
     <section>
         <form id="timeForm">
-            <input type="text" id="time1" placeholder="Enter first time (HH:MM)" pattern="^([0-1][0-9]|2[0-3]):[0-5][0-9]$">
-            <input type="text" id="time2" placeholder="Enter second time (HH:MM)" pattern="^([0-1][0-9]|2[0-3]):[0-5][0-9]$">
+            <input type="text" id="time1" placeholder="Enter first time (HH:MM)" pattern="^([0-1][0-9]|2[0-3]):[0-5][0-9]$" oninput="formatTime(this)">
+            <input type="text" id="time2" placeholder="Enter second time (HH:MM)" pattern="^([0-1][0-9]|2[0-3]):[0-5][0-9]$" oninput="formatTime(this)">
             <button type="submit">Calculate</button>
         </form>
         <p id="result"></p>
@@ -34,6 +34,32 @@
 
     <section>
         <script>
+        document.getElementById("timeForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            calculateTimeDifference();
+        });
+
+        function formatTime(inputElement) {
+            let value = inputElement.value;
+
+            value = value.replace(/[^0-9:]/g, '');
+
+            if (value.length === 2 && !value.includes(":")) {
+                value += ":";
+            }
+
+            if (value.length === 1 && value !== "0") {
+                value = "0" + value;
+            }
+
+            inputElement.value = value;
+        }
+
+        document.getElementById("timeForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            calculateTimeDifference();
+        });
+
             function calculateTimeDifference() {
 
             }
