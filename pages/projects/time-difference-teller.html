@@ -34,31 +34,26 @@
 
     <section>
         <script>
-        document.getElementById("timeForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            calculateTimeDifference();
-        });
+            document.getElementById("timeForm").addEventListener("submit", function(event) {
+                event.preventDefault();
+                calculateTimeDifference();
+            });
 
-        function formatTime(inputElement) {
-            let value = inputElement.value;
+            function formatTime(inputElement) {
+                let value = inputElement.value;
 
-            value = value.replace(/[^0-9:]/g, '');
+                value = value.replace(/[^0-9:]/g, '');
 
-            if (value.length === 2 && !value.includes(":")) {
-                value += ":";
+                if (value.length === 2 && !value.includes(":")) {
+                    value += ":";
+                }
+
+                if (value.length === 1 && value !== "0") {
+                    value = "0" + value;
+                }
+
+                inputElement.value = value;
             }
-
-            if (value.length === 1 && value !== "0") {
-                value = "0" + value;
-            }
-
-            inputElement.value = value;
-        }
-
-        document.getElementById("timeForm").addEventListener("submit", function(event) {
-            event.preventDefault();
-            calculateTimeDifference();
-        });
 
             function calculateTimeDifference() {
 
