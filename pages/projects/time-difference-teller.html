@@ -26,7 +26,14 @@
     <section>
         <form id="timeForm">
             <input type="text" id="time1" placeholder="Enter first time (HH:MM)" pattern="^([0-1][0-9]|2[0-3]):[0-5][0-9]$" oninput="formatTime(this)">
+            <input type="radio" name="ampm1" value="AM" checked> AM
+            <input type="radio" name="ampm1" value="PM"> PM
+            <br>
             <input type="text" id="time2" placeholder="Enter second time (HH:MM)" pattern="^([0-1][0-9]|2[0-3]):[0-5][0-9]$" oninput="formatTime(this)">
+            <input type="radio" name="ampm2" value="AM" checked> AM
+            <input type="radio" name="ampm2" value="PM"> PM
+            <br>
+            <br>
             <button type="submit">Calculate</button>
         </form>
         <p id="result"></p>
