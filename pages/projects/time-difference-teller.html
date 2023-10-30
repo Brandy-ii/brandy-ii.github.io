@@ -39,6 +39,22 @@
                 calculateTimeDifference();
             });
 
+            document.getElementById("time1").addEventListener("blur", function(event) {
+                let inputElement = event.target;
+                if (inputElement.value.length === 4) {
+                    inputElement.value = '0' + inputElement.value;
+                }
+                formatTime(inputElement);
+            });
+
+            document.getElementById("time2").addEventListener("blur", function(event) {
+                let inputElement = event.target;
+                if (inputElement.value.length === 4) {
+                    inputElement.value = '0' + inputElement.value;
+                }
+                formatTime(inputElement);
+            });
+
             function formatTime(inputElement) {
                 let value = inputElement.value;
                 value = value.replace(/[^0-9]|:/g, '');
@@ -48,8 +64,6 @@
                 } else if (value.length >= 4) {
                     value = value.slice(0, 2) + ':' + value.slice(2, 4);
                 } 
-
-                
 
                 value = value.substring(0, 5);
 
@@ -67,4 +81,4 @@
         Copyright &copy; 2023 Brandy Bordeaux
       </footer>
 </body>
-<html>
+</html>
