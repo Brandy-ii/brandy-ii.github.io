@@ -78,7 +78,35 @@
             }
             
             function calculateTimeDifference() {
+                const time1 = document.getElementById("time1").value;
+                const time2 = document.getElementById("time2").value;
+                const ampm1 = document.querySelector('input[name="ampm1"]:checked').value;
+                const ampm2 = document.querySelector('input[name="ampm2"]:checked').value;
 
+                let [hour1, minute1] = time1.split(":").map(Number);
+                let [hour2, minute2] = time2.split(":").map(Number);
+
+                if (ampm1 === "PM" && hour1 < 12) hour1 += 12;
+                if (ampm1 === "AM" && hour1 === 12) hour1 = 0;
+
+                if (ampm2 === "PM" && hour2 < 12) hour2 += 12;
+                if (ampm2 === "AM" && hour2 === 12) hour2 = 0;
+
+                const time1InMinutes = hour1 * 60 + minute1;
+                const time2InMinutes = hour2 * 60 + minute2;
+
+                let diffInMinutes = time2InMinutes - time1InMinutes;
+
+                if (diffInMinutes < 0) {
+                    diffInMinutes += 24 * 60;
+                }
+
+                const diffHours = Math.floor(diffInMinutes / 60);
+                const diffMinutes = diffInMinutes % 60;
+
+                const resultString = `${diffHours} hour(s) and ${diffMinutes} minute(s)`;
+
+                document.getElementById("result").innerText = resultString;
             }
         </script>
     </section>
