@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Brandy's-Magic-8-Ball</title>
+    <title>Brandy's Dynamic Magic Ball</title>
     <link rel="icon" href="/media/pfp.jpg">
     <link href="/style-sheet.css" rel="stylesheet">
     <meta charset="UTF-8">
@@ -10,32 +10,51 @@
 
 <body>
     <header id="header">
-    <h1>Brandy's-Magic-8-Ball</h1>
-    <nav>
-        <h5><a href="/index.html">Back to Main Page</a></h5>
-        <h5><a href="/pages/page-hub.html">Back to My Projects</a></h5>
-    </nav>
+        <h1><span class="dynamic-ball-name">Magic Ball</span></h1>
+        <nav>
+            <h5><a href="/index.html">Back to Main Page</a></h5>
+            <h5><a href="/pages/page-hub.html">Back to My Projects</a></h5>
+        </nav>
     </header>
     <section id="solid-boxed">
-        <h2>Code description:</h2>
-    <p>
-      description place holder
-    </p>
+        <h2>Ask the <span class="dynamic-ball-name">Magic Ball</span>:</h2>
+        <p>
+            Think a question and have it be answered by the most great and powerful <span class="dynamic-ball-name">Magic Ball</span>.
+        </p>
     </section>
 
-    <section>
-        <h1>Upload File</h1>
-
+    <section id="eight-ball-section">
+        <button onclick="askMagicBall()">Ask the <span class="dynamic-ball-name">Magic Ball</span></button>
+        <p id="eightBallAnswer"></p>
     </section>
 
-    <section>
-        <script>
-            
-        </script>
-    </section>
+    <script>
+        const responses = [
+            "yes",
+            "no"
+        ];
 
-      <section id="padding"></section>
-      <footer>
+        function updateMagicBallNames() {
+            const magicBallName = `Magic ${responses.length} Ball`;
+            const elements = document.querySelectorAll('.dynamic-ball-name');
+
+            elements.forEach((element) => {
+                element.textContent = magicBallName;
+            });
+        }
+
+        function askMagicBall() {
+            const randomIndex = Math.floor(Math.random() * responses.length);
+            const answer = responses[randomIndex];
+
+            document.getElementById('eightBallAnswer').textContent = answer;
+        }
+        updateMagicBallNames();
+    </script>
+
+    <section id="padding"></section>
+    <footer>
         Copyright &copy; 2023 Brandy Bordeaux
-      </footer>
+    </footer>
 </body>
+</html>
