@@ -27,7 +27,7 @@
 
     <section id="eight-ball-section">
         <center><button onclick="askMagicBall()">Ask the <span class="dynamic-ball-name">Magic Ball</span></button>
-        <p id="eightBallAnswer"></p></center>
+            <p id="output"></p></center>
     </section>
 
     <script>
@@ -171,7 +171,7 @@
             const randomIndex = Math.floor(Math.random() * responses.length);
             const answer = responses[randomIndex];
 
-            document.getElementById('eightBallAnswer').textContent = answer;
+            document.getElementById('output').textContent = answer;
         }
         updateMagicBallNames();
     </script>
