@@ -32,7 +32,9 @@
                     fetch("https://ipapi.co/json/")
                         .then(response => response.json())
                         .then((data) => {
-                            document.getElementById('output').textContent = 'Your IP Address is: ' + data.ip;
+                            document.getElementById('output').innerHTML = 
+                                'Your IP Address is: ' + data.ip + '<br>' + 
+                                'Your Approximate Location is: ' + data.city + ' ' + data.region_code + ', ' + data.country_name;
                         })
                         .catch(err => {
                             console.log(err);
