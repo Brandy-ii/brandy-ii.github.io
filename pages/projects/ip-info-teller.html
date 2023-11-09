@@ -22,14 +22,23 @@
         This script allows a user to see their IP and information associated with it.
     </p>
     </section>
-
     <section id="code">
 
-      <button onclick="getInput()">Click to learn your IP Address!</button>
+      <center><button onclick="getInput()">Click to learn your IP Address!</button></center>
       <p id="output"></p>
 
       <script>
-        
+            function getInput() {
+                fetch("https://api.ipify.org/?format=json")
+                    .then(response => response.json())
+                    .then((data) => {
+                        document.getElementById('output').textContent = 'Your IP Address is: ' + data.ip;
+                    })
+                    .catch(err => {
+                        console.log(err);
+                        document.getElementById('output').textContent = 'There was an error fetching your IP Address.';
+                    });
+            }
     </script>
 </section>
 
