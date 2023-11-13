@@ -155,7 +155,7 @@ br {
   -webkit-text-stroke: 1px black;
  }
 
- #input{
+ #input, #qrInput{
   width: 500px;
   height: 40px;
   padding: 5px;
@@ -164,7 +164,7 @@ br {
   font-size: 16px;
  }
 
-#input::placeholder {
+#input::placeholder, #qrInput::placeholder {
   color: #888;
   font-style: italic;
 }

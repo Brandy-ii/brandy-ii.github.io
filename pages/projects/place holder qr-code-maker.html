@@ -23,12 +23,18 @@
         </p>
         </section>
         <section id="code">
-        <center><input type="text" id="qrInput" placeholder="Enter text for QR code"></center>
-        <center><button onclick="getInput()">Click Generate A QR code!</button></center>
-        <p id="output"></p>
+        <input type="text" id="qrInput" placeholder="Enter text for QR code">
+        <button onclick="getInput()">Click Generate A QR code!</button>
+        <p><img id="output" src=""></img></p>
 
         <script>
-
+            function getInput() {
+                var inputText = document.getElementById('qrInput').value;
+                var output = document.getElementById('output');
+                if(inputText) {
+                    output.src = 'http://api.qrserver.com/v1/create-qr-code/?data=' + encodeURIComponent(inputText) + '&size=200x200';
+                }
+            }
         </script>
     </section>
 
@@ -38,5 +44,3 @@
         </footer>
     </body>
 </html>
-
-http://api.qrserver.com/v1/create-qr-code/?data=https://mixedanalytics.com&size=100x100
