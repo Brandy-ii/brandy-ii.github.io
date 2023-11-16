@@ -65,23 +65,21 @@ br {
   }
 
   h4{
-    padding-left: 2.5%;
+    padding-left: .5%;
   }
 
   h5, #flamboyant{
     margin-left: 20px;
   }
-  ul {
-    padding-left: 5%;
-    padding-right: 20%;
+   #solid-boxed{
+    padding-left: 2.5%;
+    padding-right: 2.5%;
     line-height: 1.6;
     
   }
 
   #solid-boxed {
     outline-style: solid;
-    padding-left: 2.5%;
-    line-height: 1.6;
     background-color: rgba(255, 255, 255, 0.8);
   }
 
