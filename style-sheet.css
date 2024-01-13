@@ -74,6 +74,7 @@ br {
    #solid-boxed{
     padding-left: 2.5%;
     padding-right: 2.5%;
+    padding-bottom: 10px;
     line-height: 1.6;
     
   }
