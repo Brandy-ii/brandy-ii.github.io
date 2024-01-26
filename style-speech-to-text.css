@@ -1,0 +1,27 @@
+input {
+    height: 2em;
+  }
+.speech {
+
+    width: 470px;
+    padding: 10;
+    margin: 0;
+  }
+
+  .speech input {
+    width: 550px;
+    display: inline-block;
+    height: 380px;
+    font-size: 14px;
+  }
+
+  .speech img {
+    float:right;
+    width: 40px;
+    height: 40px;
+  }
+
+  .speech img:hover{
+    transform: scale(1.1);
+    transition-duration: 100ms;
+   }
