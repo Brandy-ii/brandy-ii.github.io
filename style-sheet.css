@@ -238,3 +238,7 @@ br {
 #downloadLink{
   color: white;
 }
+
+#form{
+  -webkit-box-align: center;
+}
